@@ -1,0 +1,89 @@
+:root {
+    --azul-escuro: #1b263b;
+    --azul-medio: #415a77;
+    --azul-claro: #778da9;
+    --gelo: #e0e1dd;
+    --branco: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gelo);
+    color: var(--azul-escuro);
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 2rem text-align;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background: var(--branco);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card.reverse {
+    flex-direction: row-reverse;
+}
+
+.card img {
+    width: 40%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.content {
+    padding: 2rem;
+    width: 60%;
+}
+
+.content h2 {
+    color: var(--azul-medio);
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--azul-escuro);
+    color: var(--branco);
+}
+
+button {
+    background-color: var(--azul-claro);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--azul-medio);
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    .card, .card.reverse {
+        flex-direction: column;
+    }
+    .card img, .content {
+        width: 100%;
+    }
+}
