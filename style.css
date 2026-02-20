@@ -1,4 +1,3 @@
-/* Importando uma fonte mais moderna */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
 :root {
@@ -27,10 +26,10 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Navegação Estilizada --- */
+/* --- Navegação --- */
 nav {
     background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px); /* Efeito de vidro */
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -50,79 +49,25 @@ nav {
     -webkit-text-fill-color: transparent;
 }
 
-/* --- Hero Section --- */
+/* --- Header --- */
 header {
     padding: 8rem 1rem 6rem;
     text-align: center;
-    position: relative;
 }
 
 header h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     margin-bottom: 1rem;
-    color: var(--text-dark);
-    line-height: 1.1;
 }
 
-header p {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* --- Container e Cards --- */
+/* --- Grid de Informações --- */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-.card {
-    background: var(--card-bg);
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--white);
-    border-radius: 24px;
-    display: flex;
-    margin-bottom: 4rem;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px -10px rgba(74, 144, 226, 0.15);
-}
-
-.card img {
-    width: 45%;
-    height: 400px;
-    object-fit: cover;
-    filter: grayscale(20%);
-}
-
-.card:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.02);
-}
-
-.content {
-    padding: 3.5rem;
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--primary-blue);
-    position: relative;
-}
-
-/* --- Grid de Informações Rápidas --- */
 .grid-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -139,28 +84,61 @@ header p {
     box-shadow: var(--shadow);
 }
 
-.info-box h3 {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-light);
+/* --- NOVA SEÇÃO: Workplace --- */
+.workplace-section {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.workplace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.workplace-card {
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(74, 144, 226, 0.1);
+}
+
+.workplace-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.workplace-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.workplace-card h3 {
+    color: var(--primary-blue);
     margin-bottom: 0.5rem;
 }
 
-.info-box p {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-blue);
-    margin: 0;
+/* --- Cards Gerais --- */
+.card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    display: flex;
+    margin-bottom: 4rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
 }
 
-/* --- Skills Section --- */
+.card img { width: 45%; height: 400px; object-fit: cover; }
+.content { padding: 3.5rem; width: 55%; display: flex; flex-direction: column; justify-content: center; }
+
+/* --- Skills --- */
 .skills-section {
     background: linear-gradient(135deg, #ffffff, #f0f7ff);
     padding: 4rem;
     border-radius: 30px;
     margin-bottom: 4rem;
-    border: 1px solid var(--white);
 }
 
 .skills-grid {
@@ -176,54 +154,30 @@ header p {
     border-bottom: 4px solid var(--secondary-blue);
 }
 
-.skill-card:hover {
-    border-bottom-color: var(--primary-blue);
-    background: var(--secondary-blue);
-}
-
-/* --- Roadmap Steps --- */
-.steps {
-    display: flex;
-    counter-reset: step-counter;
-    gap: 20px;
-    margin-top: 3rem;
-}
-
+/* --- Roadmap --- */
+.steps { display: flex; gap: 20px; margin-top: 3rem; counter-reset: step-counter; }
 .step {
     background: var(--white);
     padding: 2rem 1.5rem;
     border-radius: 20px;
     flex: 1;
     position: relative;
-    font-weight: 600;
     box-shadow: var(--shadow);
 }
-
 .step::before {
     counter-increment: step-counter;
     content: counter(step-counter);
     position: absolute;
-    top: -15px;
-    left: 20px;
-    width: 35px;
-    height: 35px;
+    top: -15px; left: 20px;
+    width: 35px; height: 35px;
     background: var(--primary-blue);
     color: white;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
+    display: flex; align-items: center; justify-content: center;
 }
 
-/* --- Footer e Botões --- */
-footer {
-    padding: 5rem 1rem;
-    background: var(--white);
-    text-align: center;
-    clip-path: ellipse(150% 100% at 50% 100%); /* Curva decorativa */
-}
-
+/* --- Footer --- */
+footer { padding: 5rem 1rem; text-align: center; background: var(--white); clip-path: ellipse(150% 100% at 50% 100%); }
 button {
     background: var(--primary-blue);
     color: var(--white);
@@ -231,20 +185,11 @@ button {
     padding: 1rem 2.5rem;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
 }
 
-button:hover {
-    transform: scale(1.05);
-    background: var(--text-dark);
-}
-
-/* --- Responsividade Ajustada --- */
 @media (max-width: 850px) {
     .card { flex-direction: column; }
-    .card img, .content { width: 100%; height: auto; }
+    .card img, .content { width: 100%; }
     .steps { flex-direction: column; }
-    .content { padding: 2rem; }
 }
